@@ -16,11 +16,13 @@ export default function Item(props) {
   const [cantidadStock, setStock] = useState(stockActual);
   const [disable, setDisable] = useState(false);
   const [valorBoton, setValorBoton] = useState("COMPRAR");
+  const [classSpan, setClassSpan] = useState("conProducto")
 
   if( cantidadStock <= 0) {
     setDisable(true);
     setValorBoton("SIN STOCK");
-    setStock(`Lo lamentamos este Producto esta AGOTADO, intentaremos reponerlo lo antes posible`);
+    setStock("Lo lamentamos este Producto esta AGOTADO");
+    setClassSpan("sinProducto")
   }
 
   function comprar() {
@@ -34,8 +36,8 @@ export default function Item(props) {
     <div className='producto'>
             <h3>{props.item.producto.nombre}</h3>
             <p>{props.item.producto.descripcion}</p>
-            <h5><span>{cantidadStock}</span></h5>
-            <button onClick={() => comprar()} disabled={disable}>{valorBoton}</button>
+            <h5>Cantida en Stock: <span className={classSpan}> {cantidadStock} </span></h5>
+            <button onClick={comprar} disabled={disable}>{valorBoton}</button>
     </div>
   )
 }

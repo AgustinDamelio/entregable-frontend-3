@@ -52,12 +52,23 @@ header p span {
   text-align: center;
 }
 
+.producto .conProducto{
+  background-color: rgb(144, 238, 2);
+  padding: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: black;
+  font-weight: bold;
+}
+
 .producto h5 span{
   background-color: rgb(255, 178, 178);
   padding: 3px;
   font-weight: lighter;
   color: rgb(155, 0, 0);
   border-radius: 3px;
+  font-weight: bold;
+
 }
 .producto button{
   padding: 5px;
